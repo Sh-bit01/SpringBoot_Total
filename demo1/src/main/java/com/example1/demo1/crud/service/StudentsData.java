@@ -46,4 +46,25 @@ public class StudentsData {
         }
     }
 
+    public String updateStudentDB(int rollno, StudentsDB student){
+        try{
+            for (StudentsDB s : data){
+                if (s.getRollno() == rollno) {
+                    System.out.println("roll" + s.getRollno() + " original :" + rollno);
+                    s.setName(student.getName());
+                    s.setAge(student.getAge());
+                    if(s.getRollno() != student.rollno)
+                        s.setRollno(student.rollno);
+                    return "data updated";
+                }else {
+                    return "Data Not Found";
+                }
+            }
+
+        }
+        catch(Exception e) {
+            return e.getMessage();
+        }
+        return "Data Not Found";
+    }
 }

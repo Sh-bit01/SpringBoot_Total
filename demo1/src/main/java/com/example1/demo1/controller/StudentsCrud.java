@@ -41,4 +41,10 @@ public class StudentsCrud {
         return Student.removeDataFromStudent(rollno);
     }
 
+    @PutMapping("/update")
+    String updateStudentDB(@RequestParam int rollno, @RequestBody StudentsDB student){
+
+        return Student.updateStudentDB(rollno, student);
+    }
+
 }
