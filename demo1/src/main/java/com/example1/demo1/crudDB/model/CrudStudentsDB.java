@@ -2,6 +2,7 @@ package com.example1.demo1.crudDB.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.Data;
 
 @Entity
 public class CrudStudentsDB {
