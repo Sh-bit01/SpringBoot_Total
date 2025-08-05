@@ -1,13 +1,13 @@
-package model;
+package com.SG.SchoolManagementSystem.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.context.annotation.Primary;
 
 @Entity
+@Table
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

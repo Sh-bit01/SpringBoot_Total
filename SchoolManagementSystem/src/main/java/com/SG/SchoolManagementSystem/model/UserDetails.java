@@ -1,6 +1,6 @@
-package model;
+package com.SG.SchoolManagementSystem.model;
 
-import enumData.Role;
+import com.SG.SchoolManagementSystem.enumData.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Table
 public class UserDetails {
 
     @Id

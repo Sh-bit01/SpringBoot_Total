@@ -1,7 +1,6 @@
-package repo;
+package com.SG.SchoolManagementSystem.repo;
 
-import model.Exam;
-import model.UserDetails;
+import com.SG.SchoolManagementSystem.model.Exam;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,8 +1,8 @@
-package controller;
+package com.SG.SchoolManagementSystem.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-import service.TeacherService;
+import com.SG.SchoolManagementSystem.service.TeacherService;
 
 @Slf4j
 @RestController
@@ -17,7 +17,10 @@ public class TeacherController {
 
 
     @GetMapping("/getstd")
-    public void getStudents(){}
+    public void getStudents(){
+
+
+    }
 
     @PostMapping("/addstd")
     public void addStudents(){}

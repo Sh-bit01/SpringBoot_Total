@@ -1,9 +1,11 @@
-package service;
+package com.SG.SchoolManagementSystem.service;
 
-import model.Profile;
+import com.SG.SchoolManagementSystem.model.Teacher;
+import com.SG.SchoolManagementSystem.repo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repo.*;
+
+import java.util.List;
 
 @Service
 public class TeacherService {
@@ -20,11 +22,9 @@ public class TeacherService {
     TeacherRepo tr;
     @Autowired
     UserDetailsRepo udr;
-
-
-
-
-
-
-
+    
+    
+    public String getdtd(){
+        return "Hii ";
+    }
 }

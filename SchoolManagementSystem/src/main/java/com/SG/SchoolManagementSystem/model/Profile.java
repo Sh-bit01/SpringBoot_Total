@@ -1,4 +1,4 @@
-package model;
+package com.SG.SchoolManagementSystem.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

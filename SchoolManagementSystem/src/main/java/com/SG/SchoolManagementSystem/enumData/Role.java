@@ -1,8 +1,7 @@
-package enumData;
+package com.SG.SchoolManagementSystem.enumData;
 
 import org.springframework.stereotype.Component;
 
-@Component
 public enum Role {
     ADMIN,
     STUDENT,
