@@ -1,0 +1,104 @@
+-- Revised Tables for School Management System --
+
+1. USER_DETAILS
+--------------------------------
+ID (PK)
+EMAIL (UNIQUE, NOT NULL)
+USERNAME (UNIQUE, NOT NULL)
+PASSWORD (HASHED)
+ROLE (ENUM or FK to ROLES table)
+CREATED_AT (TIMESTAMP)
+UPDATED_AT (TIMESTAMP)
+IS_ACTIVE (BOOLEAN)
+
+2. STUDENTS
+--------------------------------
+ID (PK)
+USER_ID (FK to USER_DETAILS)
+FATHER_NAME
+MOTHER_NAME
+MOBILE_NO
+SEC_MOBILE_NO
+ADDRESS
+DOB
+GENDER
+ADMISSION_DATE
+CLASS_ID (FK to CLASSES)
+ROLL_NO
+
+3. TEACHER
+--------------------------------
+ID (PK)
+USER_ID (FK to USER_DETAILS)
+SECTION_ID (FK to CLASSES)
+SHIFT (ENUM or TEXT)
+QUALIFICATION
+JOINING_DATE
+
+4. STAFF
+--------------------------------
+ID (PK)
+USER_ID (FK to USER_DETAILS)
+DESIGNATION
+DEPARTMENT
+JOINING_DATE
+SALARY
+SHIFT
+
+5. GRADE
+--------------------------------
+ID (PK)
+STUDENT_ID (FK to STUDENTS)
+EXAM_ID (FK to EXAM)
+SUBJECT_ID (FK to SUBJECTS)
+MARKS
+OUTOFF
+GRADE (optional)
+
+6. EXAM
+--------------------------------
+ID (PK)
+EXAM_TYPE (e.g., Midterm, Final)
+DATE
+CLASS_ID (FK to CLASSES)
+TOTAL_MARKS
+
+7. CLASSES
+--------------------------------
+ID (PK)
+CLASS_NAME (e.g., 10)
+SECTION_NAME (e.g., A)
+SHIFT
+
+8. SUBJECTS
+--------------------------------
+ID (PK)
+NAME
+CLASS_ID (FK to CLASSES)
+
+9. TEACHER_SUBJECT
+--------------------------------
+TEACHER_ID (FK to TEACHER)
+SUBJECT_ID (FK to SUBJECTS)
+
+10. ATTENDANCE
+--------------------------------
+ID (PK)
+STUDENT_ID (FK to STUDENTS)
+DATE
+STATUS (ENUM: 'Present', 'Absent')
+
+11. CLASS_ENROLLMENT
+--------------------------------
+STUDENT_ID (FK to STUDENTS)
+CLASS_ID (FK to CLASSES)
+YEAR
+
+12. EXAM_RESULT
+--------------------------------
+ID (PK)
+STUDENT_ID (FK to STUDENTS)
+EXAM_ID (FK to EXAM)
+SUBJECT_ID (FK to SUBJECTS)
+MARKS
+OUTOFF

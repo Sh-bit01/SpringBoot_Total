@@ -1,10 +1,13 @@
 package com.SG.SchoolManagementSystem.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 @Entity
 @Table
@@ -22,6 +25,10 @@ public class Teacher {
     private String section;
     private String shift;
 
+    private String QUALIFICATION;
+
+    @JsonFormat(pattern = "DD-MM-YYYY")
+    private Date JOINING_DATE;
 
     @JsonIgnore
     @OneToOne

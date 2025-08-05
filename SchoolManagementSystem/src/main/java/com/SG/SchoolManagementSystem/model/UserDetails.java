@@ -5,6 +5,10 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.sql.Timestamp;
 
 @Entity
 @AllArgsConstructor
@@ -29,8 +33,20 @@ public class UserDetails {
     @Column(nullable = true)
     private String oldPassword;
 
+
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @CreatedDate
+    @Column(name = "CREATED_AT", nullable = false, updatable = false)
+    private Timestamp createdAt;
+
+    @LastModifiedDate
+    @Column(name = "UPDATED_AT")
+    private Timestamp updatedAt;
+
+
+    private boolean IS_ACTIVE;
 
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)

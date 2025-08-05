@@ -1,8 +1,12 @@
 package com.SG.SchoolManagementSystem.controller;
 
+import com.SG.SchoolManagementSystem.model.Students;
+import com.SG.SchoolManagementSystem.service.StudentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import com.SG.SchoolManagementSystem.service.TeacherService;
+
+import java.util.List;
 
 @Slf4j
 @RestController
@@ -10,6 +14,7 @@ import com.SG.SchoolManagementSystem.service.TeacherService;
 public class TeacherController {
 
     private TeacherService teacherService;
+    private StudentService st;
 
     public TeacherController(TeacherService teacherService){
         this.teacherService = teacherService;
@@ -17,9 +22,8 @@ public class TeacherController {
 
 
     @GetMapping("/getstd")
-    public void getStudents(){
-
-
+    public List<Students> getStudents(){
+        return st.getAllStudents();
     }
 
     @PostMapping("/addstd")

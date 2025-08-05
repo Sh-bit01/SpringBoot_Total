@@ -1,6 +1,7 @@
 package com.example1.demo1.crudDB.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
 
@@ -9,6 +10,7 @@ public class CrudStudentsDB {
 
     @Id
     public int rollno;
+/// ///////////////////////////
     private String name;
     private  int age;
 

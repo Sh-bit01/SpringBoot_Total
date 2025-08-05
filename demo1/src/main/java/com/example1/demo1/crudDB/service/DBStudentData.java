@@ -19,7 +19,6 @@ public class DBStudentData {
         return Student.findAll();
     }
 
-
     public CrudStudentsDB getStudentByRollNo(int rollno){
         return Student.findById(rollno).orElse(new CrudStudentsDB(0, "error", 0));
     }

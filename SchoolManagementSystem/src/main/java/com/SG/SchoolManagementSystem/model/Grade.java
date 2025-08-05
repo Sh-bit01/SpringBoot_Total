@@ -17,6 +17,18 @@ public class Grade {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
+    private String subject;
+    private String cls;
+    private int marks;
+    private int outoff;
+
+
+
+    @ManyToOne
+    @JoinColumn(name = "rollno", referencedColumnName = "id")
+    private Students student;
+
+
 
 
 
