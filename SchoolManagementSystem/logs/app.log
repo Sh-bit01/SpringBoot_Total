@@ -1,0 +1,680 @@
+2025-08-05T15:49:42.517+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 17.0.15 with PID 41112 (/home/bandaru/Music/JavaProject/SchoolManagementSystem/target/classes started by bandaru in /home/bandaru/Music/JavaProject/SchoolManagementSystem)
+2025-08-05T15:49:42.520+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-05T15:49:42.555+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-05T15:49:42.556+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-05T15:49:43.170+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-05T15:49:43.216+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 6 JPA repository interfaces.
+2025-08-05T15:49:43.696+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-05T15:49:43.705+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-05T15:49:43.705+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-05T15:49:43.734+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-05T15:49:43.735+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1178 ms
+2025-08-05T15:49:43.883+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-05T15:49:43.915+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-05T15:49:43.937+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-05T15:49:44.098+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-05T15:49:44.117+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-05T15:49:45.156+05:30  WARN 41112 --- [SchoolManagementSystem] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90011, SQLState: 90011
+2025-08-05T15:49:45.156+05:30 ERROR 41112 --- [SchoolManagementSystem] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : A file path that is implicitly relative to the current working directory is not allowed in the database URL "jdbc:h2:file:db/SchoolManagementDB". Use an absolute path, ~/name, ./name, or the baseDir setting instead. [90011-232]
+2025-08-05T15:49:45.157+05:30  WARN 41112 --- [SchoolManagementSystem] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [A file path that is implicitly relative to the current working directory is not allowed in the database URL "jdbc:h2:file:db/SchoolManagementDB". Use an absolute path, ~/name, ./name, or the baseDir setting instead. [90011-232]] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:336) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.4.jar:3.5.4]
+	at com.SG.SchoolManagementSystem.SchoolManagementSystemApplication.main(SchoolManagementSystemApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.4.jar:3.5.4]
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: A file path that is implicitly relative to the current working directory is not allowed in the database URL "jdbc:h2:file:db/SchoolManagementDB". Use an absolute path, ~/name, ./name, or the baseDir setting instead. [90011-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.ConnectionInfo.getName(ConnectionInfo.java:465) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.Engine.openSession(Engine.java:49) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.Engine.openSession(Engine.java:222) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.Engine.createSession(Engine.java:201) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:344) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.Driver.connect(Driver.java:59) ~[h2-2.3.232.jar:2.3.232]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:127) ~[HikariCP-6.3.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368) ~[HikariCP-6.3.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205) ~[HikariCP-6.3.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-6.3.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-6.3.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.1.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:483) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	... 40 common frames omitted
+
+2025-08-05T15:49:45.160+05:30 ERROR 41112 --- [SchoolManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2025-08-05T15:49:45.160+05:30  WARN 41112 --- [SchoolManagementSystem] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2025-08-05T15:49:45.163+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-08-05T15:49:45.173+05:30  INFO 41112 --- [SchoolManagementSystem] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-08-05T15:49:45.184+05:30 ERROR 41112 --- [SchoolManagementSystem] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.4.jar:3.5.4]
+	at com.SG.SchoolManagementSystem.SchoolManagementSystemApplication.main(SchoolManagementSystemApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.4.jar:3.5.4]
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.9.jar:6.2.9]
+	... 20 common frames omitted
+Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:186) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:408) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	... 35 common frames omitted
+
+2025-08-05T15:51:18.616+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 17.0.15 with PID 41236 (/home/bandaru/Music/JavaProject/SchoolManagementSystem/target/classes started by bandaru in /home/bandaru/Music/JavaProject/SchoolManagementSystem)
+2025-08-05T15:51:18.618+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-05T15:51:18.651+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-05T15:51:18.652+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-05T15:51:19.251+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-05T15:51:19.296+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 6 JPA repository interfaces.
+2025-08-05T15:51:19.794+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-05T15:51:19.803+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-05T15:51:19.804+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-05T15:51:19.832+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-05T15:51:19.833+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1181 ms
+2025-08-05T15:51:19.995+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-05T15:51:20.030+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-05T15:51:20.051+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-05T15:51:20.217+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-05T15:51:20.237+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-05T15:51:20.380+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/SchoolManagementDB user=SA
+2025-08-05T15:51:20.381+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-05T15:51:20.396+05:30  WARN 41236 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05T15:51:20.412+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-05T15:51:21.138+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-05T15:51:21.179+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T15:51:21.552+05:30  WARN 41236 --- [SchoolManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05T15:51:21.909+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./db/SchoolManagementDB'
+2025-08-05T15:51:21.975+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-05T15:51:21.997+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-05T15:51:22.006+05:30  INFO 41236 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 3.768 seconds (process running for 4.105)
+2025-08-05T15:52:34.515+05:30  INFO 41236 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-05T15:52:34.518+05:30  INFO 41236 --- [SchoolManagementSystem] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-05T15:52:34.521+05:30  INFO 41236 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T15:52:34.523+05:30  INFO 41236 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-05T15:52:34.524+05:30  INFO 41236 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-05T15:55:10.251+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 17.0.15 with PID 41441 (/home/bandaru/Music/JavaProject/SchoolManagementSystem/target/classes started by bandaru in /home/bandaru/Music/JavaProject/SchoolManagementSystem)
+2025-08-05T15:55:10.253+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-05T15:55:10.289+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-05T15:55:10.289+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-05T15:55:10.912+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-05T15:55:10.959+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 6 JPA repository interfaces.
+2025-08-05T15:55:11.443+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-05T15:55:11.452+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-05T15:55:11.453+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-05T15:55:11.480+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-05T15:55:11.480+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1191 ms
+2025-08-05T15:55:11.631+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-05T15:55:11.663+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-05T15:55:11.684+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-05T15:55:11.845+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-05T15:55:11.865+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-05T15:55:12.020+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/SchoolManagementDB user=SA
+2025-08-05T15:55:12.022+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-05T15:55:12.037+05:30  WARN 41441 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05T15:55:12.054+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-05T15:55:12.814+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-05T15:55:12.841+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T15:55:13.222+05:30  WARN 41441 --- [SchoolManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05T15:55:13.588+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./db/SchoolManagementDB'
+2025-08-05T15:55:13.658+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-05T15:55:13.681+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-05T15:55:13.690+05:30  INFO 41441 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 3.844 seconds (process running for 4.142)
+2025-08-05T16:01:53.192+05:30  INFO 41441 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-05T16:01:53.194+05:30  INFO 41441 --- [SchoolManagementSystem] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-05T16:01:53.197+05:30  INFO 41441 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T16:01:53.200+05:30  INFO 41441 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-05T16:01:53.201+05:30  INFO 41441 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-05T16:01:55.855+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 17.0.15 with PID 41750 (/home/bandaru/Music/JavaProject/SchoolManagementSystem/target/classes started by bandaru in /home/bandaru/Music/JavaProject/SchoolManagementSystem)
+2025-08-05T16:01:55.860+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-05T16:01:55.897+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-05T16:01:55.897+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-05T16:01:56.516+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-05T16:01:56.569+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 6 JPA repository interfaces.
+2025-08-05T16:01:57.108+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-05T16:01:57.118+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-05T16:01:57.119+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-05T16:01:57.146+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-05T16:01:57.147+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1249 ms
+2025-08-05T16:01:57.290+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-05T16:01:57.320+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-05T16:01:57.342+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-05T16:01:57.513+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-05T16:01:57.533+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-05T16:01:57.686+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/SchoolManagementDB user=SA
+2025-08-05T16:01:57.687+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-05T16:01:57.703+05:30  WARN 41750 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05T16:01:57.718+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-05T16:01:58.455+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-05T16:01:58.480+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T16:01:58.854+05:30  WARN 41750 --- [SchoolManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05T16:01:59.241+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./db/SchoolManagementDB'
+2025-08-05T16:01:59.305+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-05T16:01:59.327+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-05T16:01:59.335+05:30  INFO 41750 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 3.877 seconds (process running for 4.197)
+2025-08-05T16:02:07.264+05:30  INFO 41750 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-05T16:02:07.264+05:30  INFO 41750 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-05T16:02:07.266+05:30  INFO 41750 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-05T16:02:07.997+05:30  INFO 41750 --- [SchoolManagementSystem] [http-nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 262 ms
+2025-08-05T16:20:19.658+05:30  INFO 41750 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-05T16:20:19.661+05:30  INFO 41750 --- [SchoolManagementSystem] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-05T16:20:19.664+05:30  INFO 41750 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T16:20:19.666+05:30  INFO 41750 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-05T16:20:19.668+05:30  INFO 41750 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-05T18:12:59.610+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 17.0.15 with PID 44550 (/home/bandaru/Music/JavaProject/SchoolManagementSystem/target/classes started by bandaru in /home/bandaru/Music/JavaProject/SchoolManagementSystem)
+2025-08-05T18:12:59.612+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-05T18:12:59.647+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-05T18:12:59.647+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-05T18:13:00.253+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-05T18:13:00.300+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 6 JPA repository interfaces.
+2025-08-05T18:13:00.797+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-05T18:13:00.806+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-05T18:13:00.807+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-05T18:13:00.835+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-05T18:13:00.835+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1187 ms
+2025-08-05T18:13:00.988+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-05T18:13:01.018+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-05T18:13:01.040+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-05T18:13:01.211+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-05T18:13:01.231+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-05T18:13:01.388+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/SchoolManagementDB user=SA
+2025-08-05T18:13:01.389+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-05T18:13:01.405+05:30  WARN 44550 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05T18:13:01.420+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-05T18:13:02.157+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-05T18:13:02.183+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T18:13:02.551+05:30  WARN 44550 --- [SchoolManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05T18:13:02.903+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./db/SchoolManagementDB'
+2025-08-05T18:13:02.972+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-05T18:13:02.994+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-05T18:13:03.002+05:30  INFO 44550 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 3.791 seconds (process running for 4.096)
+2025-08-05T18:13:09.205+05:30  INFO 44550 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-05T18:13:09.205+05:30  INFO 44550 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-05T18:13:09.206+05:30  INFO 44550 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-05T18:13:09.735+05:30  INFO 44550 --- [SchoolManagementSystem] [http-nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 192 ms
+2025-08-05T18:14:07.191+05:30  INFO 44550 --- [SchoolManagementSystem] [http-nio-8080-exec-5] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=0, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780)]
+2025-08-05T18:14:07.325+05:30  WARN 44550 --- [SchoolManagementSystem] [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
+2025-08-05T18:14:07.326+05:30 ERROR 44550 --- [SchoolManagementSystem] [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]
+2025-08-05T18:14:07.354+05:30  INFO 44550 --- [SchoolManagementSystem] [http-nio-8080-exec-5] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: could not execute statement [NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]] [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; constraint [null] | Duration: 167 ms
+2025-08-05T18:16:25.153+05:30  INFO 44550 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-05T18:16:25.156+05:30  INFO 44550 --- [SchoolManagementSystem] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-05T18:16:25.160+05:30  INFO 44550 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T18:16:25.162+05:30  INFO 44550 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-05T18:16:25.164+05:30  INFO 44550 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-05T18:16:27.981+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 17.0.15 with PID 44751 (/home/bandaru/Music/JavaProject/SchoolManagementSystem/target/classes started by bandaru in /home/bandaru/Music/JavaProject/SchoolManagementSystem)
+2025-08-05T18:16:27.984+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-05T18:16:28.023+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-05T18:16:28.023+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-05T18:16:28.639+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-05T18:16:28.686+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 6 JPA repository interfaces.
+2025-08-05T18:16:29.195+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-05T18:16:29.204+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-05T18:16:29.205+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-05T18:16:29.233+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-05T18:16:29.233+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1209 ms
+2025-08-05T18:16:29.397+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-05T18:16:29.426+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-05T18:16:29.446+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-05T18:16:29.614+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-05T18:16:29.637+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-05T18:16:29.803+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/SchoolManagementDB user=SA
+2025-08-05T18:16:29.805+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-05T18:16:29.824+05:30  WARN 44751 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05T18:16:29.844+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-05T18:16:30.580+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-05T18:16:30.605+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T18:16:31.007+05:30  WARN 44751 --- [SchoolManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05T18:16:31.370+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./db/SchoolManagementDB'
+2025-08-05T18:16:31.446+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-05T18:16:31.470+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-05T18:16:31.479+05:30  INFO 44751 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 3.882 seconds (process running for 4.213)
+2025-08-05T18:16:31.883+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-05T18:16:31.883+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-05T18:16:31.884+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-05T18:16:31.984+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-1] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=0, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780)]
+2025-08-05T18:16:32.021+05:30  WARN 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
+2025-08-05T18:16:32.022+05:30 ERROR 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]
+2025-08-05T18:16:32.028+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-1] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: could not execute statement [NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]] [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; constraint [null] | Duration: 49 ms
+2025-08-05T18:16:35.131+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-2] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=0, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780)]
+2025-08-05T18:16:35.134+05:30  WARN 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
+2025-08-05T18:16:35.134+05:30 ERROR 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]
+2025-08-05T18:16:35.135+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-2] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: could not execute statement [NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]] [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; constraint [null] | Duration: 4 ms
+2025-08-05T18:16:35.653+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-3] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=0, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780)]
+2025-08-05T18:16:35.654+05:30  WARN 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
+2025-08-05T18:16:35.655+05:30 ERROR 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]
+2025-08-05T18:16:35.655+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-3] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: could not execute statement [NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]] [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; constraint [null] | Duration: 2 ms
+2025-08-05T18:16:35.912+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-4] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=0, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780)]
+2025-08-05T18:16:35.914+05:30  WARN 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
+2025-08-05T18:16:35.914+05:30 ERROR 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]
+2025-08-05T18:16:35.915+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-4] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: could not execute statement [NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]] [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; constraint [null] | Duration: 3 ms
+2025-08-05T18:16:36.080+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-5] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=0, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780)]
+2025-08-05T18:16:36.082+05:30  WARN 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
+2025-08-05T18:16:36.083+05:30 ERROR 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]
+2025-08-05T18:16:36.083+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-5] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: could not execute statement [NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]] [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; constraint [null] | Duration: 3 ms
+2025-08-05T18:16:36.253+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-6] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=0, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780)]
+2025-08-05T18:16:36.255+05:30  WARN 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
+2025-08-05T18:16:36.255+05:30 ERROR 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]
+2025-08-05T18:16:36.255+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-6] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: could not execute statement [NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]] [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; constraint [null] | Duration: 2 ms
+2025-08-05T18:16:36.417+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-8] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=0, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780)]
+2025-08-05T18:16:36.419+05:30  WARN 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-8] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
+2025-08-05T18:16:36.419+05:30 ERROR 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-8] o.h.engine.jdbc.spi.SqlExceptionHelper   : NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]
+2025-08-05T18:16:36.419+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-8] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: could not execute statement [NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]] [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; constraint [null] | Duration: 2 ms
+2025-08-05T18:16:36.564+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-7] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=0, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780)]
+2025-08-05T18:16:36.566+05:30  WARN 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
+2025-08-05T18:16:36.566+05:30 ERROR 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]
+2025-08-05T18:16:36.566+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-7] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: could not execute statement [NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]] [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; constraint [null] | Duration: 2 ms
+2025-08-05T18:16:36.728+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-9] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=0, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780)]
+2025-08-05T18:16:36.729+05:30  WARN 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
+2025-08-05T18:16:36.729+05:30 ERROR 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]
+2025-08-05T18:16:36.730+05:30  INFO 44751 --- [SchoolManagementSystem] [http-nio-8080-exec-9] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: could not execute statement [NULL not allowed for column "USER_ID"; SQL statement:
+insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?) [23502-232]] [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into students (admission_date,dob,father_name,gender,mother_name,name,address,mobile_no,sec_mobile_no,user_id,id) values (?,?,?,?,?,?,?,?,?,?,?)]; constraint [null] | Duration: 2 ms
+2025-08-05T18:18:10.254+05:30  INFO 44751 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-05T18:18:10.256+05:30  INFO 44751 --- [SchoolManagementSystem] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-05T18:18:10.259+05:30  INFO 44751 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T18:18:10.262+05:30  INFO 44751 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-05T18:18:10.263+05:30  INFO 44751 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-05T18:18:13.442+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 17.0.15 with PID 44902 (/home/bandaru/Music/JavaProject/SchoolManagementSystem/target/classes started by bandaru in /home/bandaru/Music/JavaProject/SchoolManagementSystem)
+2025-08-05T18:18:13.444+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-05T18:18:13.479+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-05T18:18:13.479+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-05T18:18:14.090+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-05T18:18:14.142+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 6 JPA repository interfaces.
+2025-08-05T18:18:14.684+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-05T18:18:14.694+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-05T18:18:14.694+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-05T18:18:14.723+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-05T18:18:14.724+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1245 ms
+2025-08-05T18:18:14.887+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-05T18:18:14.919+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-05T18:18:14.942+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-05T18:18:15.112+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-05T18:18:15.131+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-05T18:18:15.296+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/SchoolManagementDB user=SA
+2025-08-05T18:18:15.297+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-05T18:18:15.315+05:30  WARN 44902 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05T18:18:15.333+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-05T18:18:15.454+05:30 ERROR 44902 --- [SchoolManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Property 'com.SG.SchoolManagementSystem.model.Students.user' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+2025-08-05T18:18:15.455+05:30  WARN 44902 --- [SchoolManagementSystem] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Property 'com.SG.SchoolManagementSystem.model.Students.user' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+2025-08-05T18:18:15.456+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-05T18:18:15.746+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-05T18:18:15.753+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-08-05T18:18:15.783+05:30  INFO 44902 --- [SchoolManagementSystem] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-08-05T18:18:15.799+05:30 ERROR 44902 --- [SchoolManagementSystem] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Property 'com.SG.SchoolManagementSystem.model.Students.user' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.4.jar:3.5.4]
+	at com.SG.SchoolManagementSystem.SchoolManagementSystemApplication.main(SchoolManagementSystemApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.4.jar:3.5.4]
+Caused by: org.hibernate.AnnotationException: Property 'com.SG.SchoolManagementSystem.model.Students.user' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+	at org.hibernate.boot.model.internal.CollectionBinder.determineSemanticJavaType(CollectionBinder.java:1121) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.determineCollectionClassification(CollectionBinder.java:1013) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.createBinderAutomatically(CollectionBinder.java:855) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.getCollectionBinder(CollectionBinder.java:848) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bindCollection(CollectionBinder.java:284) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.bindProperty(PropertyBinder.java:897) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.buildProperty(PropertyBinder.java:811) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.processElementAnnotations(PropertyBinder.java:732) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.processIdPropertiesIfNotAlready(EntityBinder.java:1088) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:419) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:251) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:404) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:266) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:281) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:324) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.9.jar:6.2.9]
+	... 20 common frames omitted
+
+2025-08-05T18:19:25.485+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 17.0.15 with PID 45026 (/home/bandaru/Music/JavaProject/SchoolManagementSystem/target/classes started by bandaru in /home/bandaru/Music/JavaProject/SchoolManagementSystem)
+2025-08-05T18:19:25.487+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-05T18:19:25.520+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-05T18:19:25.520+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-05T18:19:26.151+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-05T18:19:26.198+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 6 JPA repository interfaces.
+2025-08-05T18:19:26.735+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-05T18:19:26.745+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-05T18:19:26.745+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-05T18:19:26.774+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-05T18:19:26.775+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1254 ms
+2025-08-05T18:19:26.934+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-05T18:19:26.965+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-05T18:19:26.986+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-05T18:19:27.164+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-05T18:19:27.184+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-05T18:19:27.347+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/SchoolManagementDB user=SA
+2025-08-05T18:19:27.349+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-05T18:19:27.373+05:30  WARN 45026 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05T18:19:27.389+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-05T18:19:28.157+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-05T18:19:28.185+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T18:19:28.553+05:30  WARN 45026 --- [SchoolManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05T18:19:28.931+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./db/SchoolManagementDB'
+2025-08-05T18:19:29.007+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-05T18:19:29.032+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-05T18:19:29.041+05:30  INFO 45026 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 3.92 seconds (process running for 4.264)
+2025-08-05T18:25:38.837+05:30  INFO 45026 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-05T18:25:38.839+05:30  INFO 45026 --- [SchoolManagementSystem] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-05T18:25:38.841+05:30  INFO 45026 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T18:25:38.844+05:30  INFO 45026 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-05T18:25:38.845+05:30  INFO 45026 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-05T18:25:41.692+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 17.0.15 with PID 45274 (/home/bandaru/Music/JavaProject/SchoolManagementSystem/target/classes started by bandaru in /home/bandaru/Music/JavaProject/SchoolManagementSystem)
+2025-08-05T18:25:41.694+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-05T18:25:41.729+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-05T18:25:41.729+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-05T18:25:42.334+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-05T18:25:42.381+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 6 JPA repository interfaces.
+2025-08-05T18:25:42.868+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-05T18:25:42.877+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-05T18:25:42.878+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-05T18:25:42.906+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-05T18:25:42.906+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1177 ms
+2025-08-05T18:25:43.061+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-05T18:25:43.095+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-05T18:25:43.118+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-05T18:25:43.276+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-05T18:25:43.295+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-05T18:25:43.452+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/SchoolManagementDB user=SA
+2025-08-05T18:25:43.453+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-05T18:25:43.468+05:30  WARN 45274 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05T18:25:43.483+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-05T18:25:44.210+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-05T18:25:44.236+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T18:25:44.602+05:30  WARN 45274 --- [SchoolManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05T18:25:44.964+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./db/SchoolManagementDB'
+2025-08-05T18:25:45.035+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-05T18:25:45.067+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-05T18:25:45.075+05:30  INFO 45274 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 3.777 seconds (process running for 4.08)
+2025-08-05T18:26:15.527+05:30  INFO 45274 --- [SchoolManagementSystem] [http-nio-8080-exec-9] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-05T18:26:15.529+05:30  INFO 45274 --- [SchoolManagementSystem] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-05T18:26:15.535+05:30  INFO 45274 --- [SchoolManagementSystem] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-08-05T18:26:16.062+05:30  INFO 45274 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 184 ms
+2025-08-05T18:26:53.951+05:30  WARN 45274 --- [SchoolManagementSystem] [http-nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name]
+2025-08-05T18:27:04.016+05:30  INFO 45274 --- [SchoolManagementSystem] [http-nio-8080-exec-9] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=101, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780, USER_ID=1)]
+2025-08-05T18:27:04.017+05:30  INFO 45274 --- [SchoolManagementSystem] [http-nio-8080-exec-9] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: Cannot invoke "com.SG.SchoolManagementSystem.model.UserDetails.setId(int)" because "this.user" is null | Duration: 6 ms
+2025-08-05T18:27:22.905+05:30  INFO 45274 --- [SchoolManagementSystem] [http-nio-8080-exec-2] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=0, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780, USER_ID=1)]
+2025-08-05T18:27:22.906+05:30  INFO 45274 --- [SchoolManagementSystem] [http-nio-8080-exec-2] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: Cannot invoke "com.SG.SchoolManagementSystem.model.UserDetails.setId(int)" because "this.user" is null | Duration: 1 ms
+2025-08-05T18:28:29.829+05:30  INFO 45274 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-05T18:28:29.831+05:30  INFO 45274 --- [SchoolManagementSystem] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-05T18:28:29.834+05:30  INFO 45274 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T18:28:29.836+05:30  INFO 45274 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-05T18:28:29.838+05:30  INFO 45274 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-05T18:28:47.067+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 17.0.15 with PID 45543 (/home/bandaru/Music/JavaProject/SchoolManagementSystem/target/classes started by bandaru in /home/bandaru/Music/JavaProject/SchoolManagementSystem)
+2025-08-05T18:28:47.069+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-05T18:28:47.114+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-05T18:28:47.114+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-05T18:28:47.706+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-05T18:28:47.751+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 6 JPA repository interfaces.
+2025-08-05T18:28:48.233+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-05T18:28:48.242+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-05T18:28:48.243+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-05T18:28:48.270+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-05T18:28:48.270+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1155 ms
+2025-08-05T18:28:48.425+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-05T18:28:48.457+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-05T18:28:48.479+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-05T18:28:48.645+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-05T18:28:48.664+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-05T18:28:48.824+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/SchoolManagementDB user=SA
+2025-08-05T18:28:48.826+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-05T18:28:48.841+05:30  WARN 45543 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05T18:28:48.857+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-05T18:28:49.592+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-05T18:28:49.617+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T18:28:50.007+05:30  WARN 45543 --- [SchoolManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05T18:28:50.383+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./db/SchoolManagementDB'
+2025-08-05T18:28:50.449+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-05T18:28:50.471+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-05T18:28:50.479+05:30  INFO 45543 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 3.783 seconds (process running for 4.19)
+2025-08-05T18:29:03.800+05:30  INFO 45543 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-05T18:29:03.800+05:30  INFO 45543 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-05T18:29:03.801+05:30  INFO 45543 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-05T18:29:03.901+05:30  INFO 45543 --- [SchoolManagementSystem] [http-nio-8080-exec-1] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=101, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780, USER_ID=1)]
+2025-08-05T18:29:03.992+05:30  INFO 45543 --- [SchoolManagementSystem] [http-nio-8080-exec-1] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [com.SG.SchoolManagementSystem.model.Students#101] | Duration: 96 ms
+2025-08-05T18:31:07.367+05:30  INFO 45543 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-05T18:31:07.370+05:30  INFO 45543 --- [SchoolManagementSystem] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-05T18:31:07.373+05:30  INFO 45543 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T18:31:07.375+05:30  INFO 45543 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-05T18:31:07.376+05:30  INFO 45543 --- [SchoolManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-05T18:31:10.016+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Starting SchoolManagementSystemApplication using Java 17.0.15 with PID 45703 (/home/bandaru/Music/JavaProject/SchoolManagementSystem/target/classes started by bandaru in /home/bandaru/Music/JavaProject/SchoolManagementSystem)
+2025-08-05T18:31:10.018+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-05T18:31:10.063+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-05T18:31:10.063+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-05T18:31:10.670+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-05T18:31:10.716+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 6 JPA repository interfaces.
+2025-08-05T18:31:11.211+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-05T18:31:11.220+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-05T18:31:11.221+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-05T18:31:11.249+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-05T18:31:11.250+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1185 ms
+2025-08-05T18:31:11.399+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-05T18:31:11.436+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-05T18:31:11.460+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-05T18:31:11.626+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-05T18:31:11.645+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-05T18:31:11.809+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/SchoolManagementDB user=SA
+2025-08-05T18:31:11.811+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-05T18:31:11.826+05:30  WARN 45703 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05T18:31:11.841+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-05T18:31:12.578+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-05T18:31:12.605+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T18:31:12.978+05:30  WARN 45703 --- [SchoolManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05T18:31:13.332+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./db/SchoolManagementDB'
+2025-08-05T18:31:13.402+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-05T18:31:13.424+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-05T18:31:13.435+05:30  INFO 45703 --- [SchoolManagementSystem] [restartedMain] c.S.S.SchoolManagementSystemApplication  : Started SchoolManagementSystemApplication in 3.784 seconds (process running for 4.101)
+2025-08-05T18:31:24.413+05:30  INFO 45703 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-05T18:31:24.414+05:30  INFO 45703 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-05T18:31:24.415+05:30  INFO 45703 --- [SchoolManagementSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-05T18:31:24.513+05:30  INFO 45703 --- [SchoolManagementSystem] [http-nio-8080-exec-1] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=101, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780, USER_ID=1)]
+2025-08-05T18:31:24.514+05:30  INFO 45703 --- [SchoolManagementSystem] [http-nio-8080-exec-1] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: Cannot invoke "com.SG.SchoolManagementSystem.model.UserDetails.setId(int)" because "this.user" is null | Duration: 6 ms
+2025-08-05T18:31:29.357+05:30  INFO 45703 --- [SchoolManagementSystem] [http-nio-8080-exec-2] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=101, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780, USER_ID=1)]
+2025-08-05T18:31:29.357+05:30  INFO 45703 --- [SchoolManagementSystem] [http-nio-8080-exec-2] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: Cannot invoke "com.SG.SchoolManagementSystem.model.UserDetails.setId(int)" because "this.user" is null | Duration: 0 ms
+2025-08-05T18:31:29.796+05:30  INFO 45703 --- [SchoolManagementSystem] [http-nio-8080-exec-3] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=101, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780, USER_ID=1)]
+2025-08-05T18:31:29.796+05:30  INFO 45703 --- [SchoolManagementSystem] [http-nio-8080-exec-3] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: Cannot invoke "com.SG.SchoolManagementSystem.model.UserDetails.setId(int)" because "this.user" is null | Duration: 0 ms
+2025-08-05T18:31:29.964+05:30  INFO 45703 --- [SchoolManagementSystem] [http-nio-8080-exec-4] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=101, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780, USER_ID=1)]
+2025-08-05T18:31:29.964+05:30  INFO 45703 --- [SchoolManagementSystem] [http-nio-8080-exec-4] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: Cannot invoke "com.SG.SchoolManagementSystem.model.UserDetails.setId(int)" because "this.user" is null | Duration: 0 ms
+2025-08-05T18:31:30.101+05:30  INFO 45703 --- [SchoolManagementSystem] [http-nio-8080-exec-5] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=101, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780, USER_ID=1)]
+2025-08-05T18:31:30.101+05:30  INFO 45703 --- [SchoolManagementSystem] [http-nio-8080-exec-5] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: Cannot invoke "com.SG.SchoolManagementSystem.model.UserDetails.setId(int)" because "this.user" is null | Duration: 0 ms
+2025-08-05T18:31:30.286+05:30  INFO 45703 --- [SchoolManagementSystem] [http-nio-8080-exec-6] c.S.S.logging.ServiceLoggingAspect       : [SERVICE START] StudentService.addStudent() - Args: [StudentDTO(ID=101, NAME=John Doe, FATHER_NAME=Richard Doe, MOTHER_NAME=Jane Doe, DOB=Sun Apr 15 05:30:00 IST 2007, ADMISSION_DATE=Sat Jun 10 15:00:00 IST 2023, GENDER=Male, address=123 Main Street, Springfield, IL 62704, mobileNo=9876543210, secMobileNo=9123456780, USER_ID=1)]
+2025-08-05T18:31:30.286+05:30  INFO 45703 --- [SchoolManagementSystem] [http-nio-8080-exec-6] c.S.S.logging.ServiceLoggingAspect       : [SERVICE END]   StudentService.addStudent() - Returned: Cannot invoke "com.SG.SchoolManagementSystem.model.UserDetails.setId(int)" because "this.user" is null | Duration: 0 ms
