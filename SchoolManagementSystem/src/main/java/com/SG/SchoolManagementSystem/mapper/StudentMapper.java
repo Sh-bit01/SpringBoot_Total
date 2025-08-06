@@ -16,8 +16,8 @@ public class StudentMapper {
                 student.getGENDER(),
                 student.getAddress(),
                 student.getMobileNo(),
-                student.getSecMobileNo(),
-                student.getUSER_ID());
+                student.getSecMobileNo());
+//                student.getUser_id());
     }
 
     public static Students toEntity(StudentDTO dto) {
@@ -31,7 +31,7 @@ public class StudentMapper {
         student.setGENDER(dto.getGENDER());
         student.setMobileNo(dto.getMobileNo());
         student.setSecMobileNo(dto.getSecMobileNo());
-        student.setUSER_ID(dto.getUSER_ID());
+//        student.setUSER_ID(dto.getUSER_ID());
         return student;
     }
 

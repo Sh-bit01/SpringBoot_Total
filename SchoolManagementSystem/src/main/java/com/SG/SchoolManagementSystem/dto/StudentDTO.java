@@ -16,7 +16,7 @@ public class StudentDTO {
     public StudentDTO(int ID, String NAME, String FATHER_NAME,
                       String MOTHER_NAME, Date DOB, Date ADMISSION_DATE,
                       Gender GENDER, String address, BigInteger mobileNo,
-                      BigInteger secMobileNo, int USER_ID) {
+                      BigInteger secMobileNo) {
         this.ID = ID;
         this.NAME = NAME;
         this.FATHER_NAME = FATHER_NAME;
@@ -27,7 +27,7 @@ public class StudentDTO {
         this.address = address;
         this.mobileNo = mobileNo;
         this.secMobileNo = secMobileNo;
-        this.USER_ID = USER_ID;
+//        this.USER_ID = USER_ID;
     }
 
     public StudentDTO(){}
@@ -42,6 +42,6 @@ public class StudentDTO {
     private String address;
     private BigInteger mobileNo;
     private BigInteger secMobileNo;
-    private int USER_ID;
+//    private int USER_ID;
 
 }
