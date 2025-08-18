@@ -1,6 +1,7 @@
 package com.example1.demo1.databaseRelationship.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,4 +24,8 @@ public class StudentDetails {
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private UserDetails userDetails;
+
+    @ManyToMany(mappedBy = "std")
+    private ExamDetails exam;
+
 }
