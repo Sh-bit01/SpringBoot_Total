@@ -3,13 +3,17 @@ package com.demo.websocket.entity;
 import com.demo.websocket.chat.MessageType;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
-@Entity
+import java.time.LocalDateTime;
+
+@Entity(name = "ChatMessage")
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "ChatMessage")
 public class ChatMessageEntity {
 
     @Id
@@ -22,5 +26,7 @@ public class ChatMessageEntity {
     private String sender;
     private String content;
 
-    private Long timestamp;
+    @CreationTimestamp
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime timestamp;
 }
