@@ -1,44 +1,20 @@
 'use strict';
 
-let usernamePage = document.querySelector('#username-page');
-let chatPage = document.querySelector('#chat-page');
-let usernameForm = document.querySelector('#usernameForm');
-let messageForm = document.querySelector('#messageForm');
-let messageInput = document.querySelector('#message');
-let messageArea = document.querySelector('#messageArea');
-let connectingElement = document.querySelector('.connecting');
+var usernamePage = document.querySelector('#username-page');
+var chatPage = document.querySelector('#chat-page');
+var usernameForm = document.querySelector('#usernameForm');
+var messageForm = document.querySelector('#messageForm');
+var messageInput = document.querySelector('#message');
+var messageArea = document.querySelector('#messageArea');
+var connectingElement = document.querySelector('.connecting');
 
-let stompClient = null;
-let username = null;
+var stompClient = null;
+var username = null;
 
-let colors = [
+var colors = [
     '#2196F3', '#32c787', '#00BCD4', '#ff5652',
     '#ffc107', '#ff85af', '#FF9800', '#39bbb0'
 ];
-
-//////////////////Username Store//////////////////////
-window.addEventListener("load", checkStoredUsername);
-
-function checkStoredUsername() {
-    let storedUsername = localStorage.getItem("chatUsername");
-
-    if (storedUsername) {
-        // If username is already stored, use it directly
-        username = storedUsername;
-
-        usernamePage.classList.add('hidden');
-        chatPage.classList.remove('hidden');
-
-        let socket = new SockJS('/ws');
-        stompClient = Stomp.over(socket);
-        stompClient.connect({}, onConnected, onError);
-    } else {
-        // If not stored, show the username input page
-        usernamePage.classList.remove('hidden');
-        chatPage.classList.add('hidden');
-    }
-}
-/////////////////////////////////////////////////////
 
 function connect(event) {
     username = document.querySelector('#name').value.trim();
@@ -47,7 +23,7 @@ function connect(event) {
         usernamePage.classList.add('hidden');
         chatPage.classList.remove('hidden');
 
-        let socket = new SockJS('/ws');
+        var socket = new SockJS('/ws');
         stompClient = Stomp.over(socket);
 
         stompClient.connect({}, onConnected, onError);
@@ -59,10 +35,6 @@ function connect(event) {
 function onConnected() {
     // Subscribe to the Public Topic
     stompClient.subscribe('/topic/public', onMessageReceived);
-
-    // Subscribe to online user count
-            stompClient.subscribe('/topic/onlineCount', onOnlineCountReceived);
-            stompClient.subscribe('/topic/onlineUsers', onOnlineUserNameReceived);
 
     // Tell your username to the server
     stompClient.send("/app/chat.addUser",
@@ -80,9 +52,9 @@ function onError(error) {
 }
 
 function sendMessage(event) {
-    let messageContent = messageInput.value.trim();
+    var messageContent = messageInput.value.trim();
     if(messageContent && stompClient) {
-        let chatMessage = {
+        var chatMessage = {
             sender: username,
             content: messageInput.value,
             type: 'CHAT'
@@ -95,9 +67,9 @@ function sendMessage(event) {
 
 
 function onMessageReceived(payload) {
-    let message = JSON.parse(payload.body);
+    var message = JSON.parse(payload.body);
 
-    let messageElement = document.createElement('li');
+    var messageElement = document.createElement('li');
 
     if(message.type === 'JOIN') {
         messageElement.classList.add('event-message');
@@ -108,21 +80,21 @@ function onMessageReceived(payload) {
     } else {
         messageElement.classList.add('chat-message');
 
-        let avatarElement = document.createElement('i');
-        let avatarText = document.createTextNode(message.sender[0]);
+        var avatarElement = document.createElement('i');
+        var avatarText = document.createTextNode(message.sender[0]);
         avatarElement.appendChild(avatarText);
         avatarElement.style['background-color'] = getAvatarColor(message.sender);
 
         messageElement.appendChild(avatarElement);
 
-        let usernameElement = document.createElement('span');
-        let usernameText = document.createTextNode(message.sender);
+        var usernameElement = document.createElement('span');
+        var usernameText = document.createTextNode(message.sender);
         usernameElement.appendChild(usernameText);
         messageElement.appendChild(usernameElement);
     }
 
-    let textElement = document.createElement('p');
-    let messageText = document.createTextNode(message.content);
+    var textElement = document.createElement('p');
+    var messageText = document.createTextNode(message.content);
     textElement.appendChild(messageText);
 
     messageElement.appendChild(textElement);
@@ -133,38 +105,13 @@ function onMessageReceived(payload) {
 
 
 function getAvatarColor(messageSender) {
-    let hash = 0;
-    for (let i = 0; i < messageSender.length; i++) {
+    var hash = 0;
+    for (var i = 0; i < messageSender.length; i++) {
         hash = 31 * hash + messageSender.charCodeAt(i);
     }
-    let index = Math.abs(hash % colors.length);
+    var index = Math.abs(hash % colors.length);
     return colors[index];
 }
 
-//---------------------------------------------------------------------------
-
-function onOnlineCountReceived(payload) {
-    const onlineCount = payload.body; // backend sends just the number
-    document.querySelector("#onlineCount").textContent = "Online Users: " + onlineCount;
-    //console.log(onlineCount);
-    }
-
-function onOnlineUserNameReceived(payload){
-    const users = JSON.parse(payload.body);
-    const container = document.querySelector("#onlineUsers");
-    container.innerHTML = "";
-    users.forEach(user => {
-        const li = document.createElement("li");
-        li.textContent = user;
-        container.appendChild(li);
-    });}
-
-//---------------------------------------------------------------------------
-
 usernameForm.addEventListener('submit', connect, true)
 messageForm.addEventListener('submit', sendMessage, true)
-
-
-
-
-
