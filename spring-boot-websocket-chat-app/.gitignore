@@ -3,6 +3,12 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+###DB ###
+*.db
+/DB
+DB/
+
+
 ### STS ###
 .apt_generated
 .classpath
