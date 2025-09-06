@@ -1,5 +1,6 @@
-package com.demo.websocket.chat;
+package com.demo.websocket.dto;
 
+import com.demo.websocket.chat.MessageType;
 import lombok.*;
 
 @Getter
@@ -7,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ChatMessage {
+public class ChatMessageDTO {
 
     private MessageType type;
     private String content;

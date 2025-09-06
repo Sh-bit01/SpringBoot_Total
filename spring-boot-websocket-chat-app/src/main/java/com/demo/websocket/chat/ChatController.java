@@ -1,6 +1,7 @@
 package com.demo.websocket.chat;
 
 import com.demo.websocket.config.WebSocketEventListener;
+import com.demo.websocket.dto.ChatMessageDTO;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -18,23 +19,23 @@ public class ChatController {
 
     @MessageMapping("/chat.sendMessage")
     @SendTo("/topic/public")
-    public ChatMessage sendMessage(
-            @Payload ChatMessage chatMessage
+    public ChatMessageDTO sendMessage(
+            @Payload ChatMessageDTO chatMessageDTO
     ) {
-        return chatMessage;
+        return chatMessageDTO;
     }
 
     @MessageMapping("/chat.addUser")
     @SendTo("/topic/public")
-    public ChatMessage addUser(
-            @Payload ChatMessage chatMessage,
+    public ChatMessageDTO addUser(
+            @Payload ChatMessageDTO chatMessageDTO,
             SimpMessageHeaderAccessor headerAccessor
     ) {
         // Add username in web socket session
-        headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
+        headerAccessor.getSessionAttributes().put("username", chatMessageDTO.getSender());
 
         // Register user as online
-        webSocketEventListener.addOnlineUser(chatMessage.getSender());
-        return chatMessage;
+        webSocketEventListener.addOnlineUser(chatMessageDTO.getSender());
+        return chatMessageDTO;
     }
 }

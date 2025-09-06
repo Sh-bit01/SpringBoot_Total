@@ -1,6 +1,6 @@
 package com.demo.websocket.config;
 
-import com.demo.websocket.chat.ChatMessage;
+import com.demo.websocket.dto.ChatMessageDTO;
 import com.demo.websocket.chat.MessageType;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -36,7 +36,7 @@ public class WebSocketEventListener {
             onlineUsers.remove(username);
 
             log.info("User disconnected: {}, online users: {}", username, onlineUsers.size());
-            var chatMessage = ChatMessage.builder()
+            var chatMessage = ChatMessageDTO.builder()
                     .type(MessageType.LEAVE)
                     .sender(username)
                     .build();
