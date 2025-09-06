@@ -17,7 +17,11 @@ let colors = [
 ];
 
 //////////////////Username Store//////////////////////
-window.addEventListener("load", checkStoredUsername);
+
+//window.addEventListener("load", checkStoredUsername);
+
+//document.addEventListener("DOMContentLoaded", () => checkStoredUsername());
+
 
 function checkStoredUsername() {
     let storedUsername = localStorage.getItem("chatUsername");
@@ -42,6 +46,7 @@ function checkStoredUsername() {
 
 function connect(event) {
     username = document.querySelector('#name').value.trim();
+    localStorage.setItem("chatUsername", username);
 
     if(username) {
         usernamePage.classList.add('hidden');
@@ -166,5 +171,50 @@ messageForm.addEventListener('submit', sendMessage, true)
 
 
 
+
+
+///-------------------------------------------------------------------------
+// -----------------------Chat History Handle ------------------------------
+
+async function loadChatHistory() {
+    try {
+        const response = await fetch('/chat/history');
+        const chats = await response.json();
+        displayChatHistory(chats);
+    } catch (error) {
+        console.error('Error fetching chat history:', error);
+    }
+}
+function displayChatHistory(chats) {
+    chats.slice().reverse().forEach(chat => {
+        onMessageReceived({ body: JSON.stringify(chat) });
+    });
+}
+
+//function displayChatHistory(chats) {
+//    const chatBox = document.getElementById('messageArea'); // your chat container
+//    if (!chatBox) return;
+//
+//    chats.forEach(chat => {
+//        const msg = document.createElement('div');
+//
+//        if (chat.type === 'CHAT') {
+//            msg.textContent = `${chat.sender}: ${chat.content}`;
+//        } else if (chat.type === 'JOIN') {
+//            msg.textContent = `${chat.sender} joined the chat`;
+//        }
+//
+//        chatBox.appendChild(msg);
+//    });
+//}
+
+// Load chat history when the page loads
+//window.addEventListener('DOMContentLoaded', loadChatHistory);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadChatHistory();
+  checkStoredUsername();
+});
 
 
