@@ -7,6 +7,10 @@ target/
 *.db
 /DB
 DB/
+/uploads
+/uploads/*
+uploads/*
+uploads/
 
 
 ### STS ###
