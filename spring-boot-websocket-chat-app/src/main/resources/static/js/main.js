@@ -164,15 +164,6 @@ function onOnlineUserNameReceived(payload){
         container.appendChild(li);
     });}
 
-//---------------------------------------------------------------------------
-
-usernameForm.addEventListener('submit', connect, true)
-messageForm.addEventListener('submit', sendMessage, true)
-
-
-
-
-
 ///-------------------------------------------------------------------------
 // -----------------------Chat History Handle ------------------------------
 
@@ -218,3 +209,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+//-------------------------------------------------------------------------------------
+
+messageInput.addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+    event.preventDefault(); // stop form from reloading page
+
+    // trigger form submission
+    messageForm.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+    console.log("hiiihihihihisgfdadasgfddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
+    // clear input
+    messageInput.value = '';
+  }
+});
+
+
+//---------------------------------------------------------------------------
+
+usernameForm.addEventListener('submit', connect, true)
+messageForm.addEventListener('submit', sendMessage, true)

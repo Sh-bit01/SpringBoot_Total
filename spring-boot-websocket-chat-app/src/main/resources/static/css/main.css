@@ -288,7 +288,17 @@ button.accent {
 }
 
 
-
+.emoji-menu {
+    position: absolute;
+    bottom: 30px;
+    top: inherit;
+    z-index: 999;
+    width: 225px;
+    overflow: hidden;
+    border: 1px #dfdfdf solid;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
 
 
 

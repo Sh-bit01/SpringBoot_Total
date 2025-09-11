@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Random;
 
 @Service
 public class FileStorageService {
@@ -29,7 +32,21 @@ public class FileStorageService {
 
     public String storeFile(MultipartFile file) {
         // Normalize file name
-        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+//        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+
+        // Generate custom file name
+        String dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
+        String randomString = generateRandomString(4);
+        String extension = "";
+
+        // Extract original file extension if present
+        String originalFileName = StringUtils.cleanPath(file.getOriginalFilename());
+        int dotIndex = originalFileName.lastIndexOf('.');
+        if (dotIndex > 0) {
+            extension = originalFileName.substring(dotIndex);
+        }
+
+        String fileName = "ChatApplication_" + dateTime + "_" + randomString + extension;
 
         try {
             // Check for invalid characters
@@ -45,6 +62,27 @@ public class FileStorageService {
 
         } catch (IOException ex) {
             throw new RuntimeException("Could not store file " + fileName, ex);
+        }
+    }
+    private String generateRandomString(int length) {
+        String chars = "qwertyuiopasdfghjklzxcvbnmABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        Random rnd = new Random();
+        StringBuilder sb = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {
+            sb.append(chars.charAt(rnd.nextInt(chars.length())));
+        }
+        return sb.toString();
+    }
+
+    public void deleteFile(String fileUrl) {
+        try {
+            // Remove prefix "/uploads/" to get actual file name
+            String fileName = fileUrl.replaceFirst("^/uploads/", "");
+            Path filePath = this.fileStorageLocation.resolve(fileName).normalize();
+            Files.deleteIfExists(filePath);
+        } catch (IOException ex) {
+            // Log instead of throwing, to avoid hiding original exception
+            System.err.println("Failed to delete file: " + ex.getMessage());
         }
     }
 }

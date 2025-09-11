@@ -1,7 +1,6 @@
 package com.demo.websocket.controller;
 
 import com.demo.websocket.dto.ChatMessageDTO;
-import com.demo.websocket.entity.ChatMessageEntity;
 import com.demo.websocket.service.ChatMessageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
