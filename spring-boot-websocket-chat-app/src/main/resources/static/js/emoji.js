@@ -1,5 +1,6 @@
-// emoji.js
-$(function() {
+'use strict';
+
+$(function () {
   // Initialize emoji picker for the input field
   window.emojiPicker = new EmojiPicker({
     emojiable_selector: '#message',
@@ -9,11 +10,16 @@ $(function() {
   window.emojiPicker.discover();
 
   // Create our own button to trigger the picker
-  $('#emoji-button').on('click', function(e) {
+  $('#emoji-button').on('click', function (e) {
     e.preventDefault();
-    const $pickerButton = $('.emoji-picker-icon'); // the hidden button added by emoji-picker
+
+    // Find the picker icon injected for #message
+    const $pickerButton = $('#message').siblings('.emoji-picker-icon');
+
     if ($pickerButton.length) {
-      $pickerButton.first().click(); // trigger the emoji popup
+      $pickerButton.trigger('click'); // trigger the emoji popup
+    } else {
+      console.warn("Emoji picker button not found. Make sure EmojiPicker initialized correctly.");
     }
   });
 });
