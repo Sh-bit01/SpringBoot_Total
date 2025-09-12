@@ -5,11 +5,12 @@ import com.demo.websocket.chat.MessageType;
 import com.demo.websocket.dto.ChatMessageDTO;
 import com.demo.websocket.service.ChatMessageService;
 import com.demo.websocket.service.FileStorageService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.transaction.annotation.Transactional;
+
 
 @RestController
 @RequestMapping("/api/files")
@@ -30,7 +31,8 @@ public class FileUploadController {
 
 
     @PostMapping("/upload")
-    public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file,
+    @Transactional
+    public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file,
                                         @RequestParam("sender") String sender) {
         try {
             fileUrl = fileStorageService.storeFile(file);
