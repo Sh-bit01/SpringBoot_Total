@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+file:
+  upload-dir: ./uploads
+
+spring:
+  datasource:
+    url: jdbc:h2:file:./DB/chatdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+#  ai:
+#    huggingface:
+#      chat:
+#        api-key: 
+#        url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3
+#    model:
+#      chat: hf
+
+
+
+
+#  spring.ai.huggingface.chat.api-key=YOUR_API_KEY
+#  spring.ai.huggingface.chat.url=https://api-inference.huggingface.co/models/YOUR_MODEL_ID
+#  spring.ai.model.chat=hf
