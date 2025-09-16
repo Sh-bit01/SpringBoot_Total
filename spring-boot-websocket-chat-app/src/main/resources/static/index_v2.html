@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Websokate Chatroom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f2f2f2;}
+        #username-page, #chat-page {display: none; height: 100vh;}
+        .hidden {display: none;}
+
+        #username-page {display: flex; justify-content: center; align-items: center;}
+        #username-page .form-container {background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);}
+
+        #chat-page {display: flex; flex-direction: column;}
+        header {background: #2b6cb0; color: #fff; padding: 10px; text-align: center;}
+        .chat-container {display: flex; flex: 1;}
+
+        aside {width: 220px; background: #fff; border-right: 1px solid #ddd; padding: 15px; overflow-y: auto;}
+        aside h2 {font-size: 16px; margin-top: 0; margin-bottom: 10px; color: #2b6cb0;}
+        #onlineUsers {list-style: none; padding: 0; margin: 0;}
+        #onlineUsers li {padding: 8px; margin-bottom: 5px; border-radius: 6px; transition: background 0.2s; cursor: default;}
+        #onlineUsers li:hover {background: #f0f4ff;}
+
+        main {flex: 1; display: flex; flex-direction: column;}
+        #messageArea {flex: 1; padding: 15px; overflow-y: auto; background: #fafafa;}
+        #messageArea li {list-style: none; margin-bottom: 15px;}
+        .chat-message {display: flex; align-items: flex-start;}
+        .chat-message i {display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;color:#fff;margin-right:8px;}
+        .chat-message span {font-weight: bold; margin-right: 5px;}
+        .chat-message p {margin: 0; padding: 8px 12px; background: #fff; border-radius: 8px; border: 1px solid #eee;}
+
+        .event-message {text-align: center; font-style: italic; color: #888;}
+
+        footer {padding: 10px; border-top: 1px solid #ddd; background: #fff; display: flex; gap: 8px;}
+        footer input[type=text] {flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #ddd;}
+        footer button {background: #2b6cb0; color: #fff; border: none; padding: 10px 14px; border-radius: 6px; cursor: pointer;}
+        footer button:hover {background: #1f4f91;}
+        .icon-btn {background: #eee; color: #333; border: 1px solid #ccc; border-radius: 6px; padding: 10px; cursor: pointer;}
+        .icon-btn:hover {background: #ddd;}
+
+        .connecting {padding: 8px; text-align: center; color: #666; font-size: 14px;}
+    </style>
+</head>
+<body>
+<div id="username-page">
+    <div class="form-container">
+        <form id="usernameForm">
+            <h2>Enter Chatroom</h2>
+            <input type="text" id="name" placeholder="Your name" required />
+            <button type="submit">Join</button>
+        </form>
+    </div>
+</div>
+
+<div id="chat-page" class="hidden">
+    <header>
+        <h1>Websokate Chatroom</h1>
+    </header>
+    <div class="chat-container">
+        <aside>
+            <h2 id="onlineCount">Online Users: 0</h2>
+            <ul id="onlineUsers"></ul>
+        </aside>
+        <main>
+            <ul id="messageArea"></ul>
+            <div class="connecting">Connecting...</div>
+            <footer>
+                <input type="text" id="message" placeholder="Type a message..." autocomplete="off" />
+                <button type="button" class="icon-btn" id="emojiBtn">😊</button>
+                <input type="file" id="imageUpload" accept="image/*" style="display:none" />
+                <button type="button" class="icon-btn" id="imageBtn">📷</button>
+                <button type="submit">Send</button>
+            </footer>
+        </main>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script>
+    // === OLD JS integrated ===
+    'use strict';
+
+    let usernamePage = document.querySelector('#username-page');
+    let chatPage = document.querySelector('#chat-page');
+    let usernameForm = document.querySelector('#usernameForm');
+    let messageForm = document.querySelector('footer');
+    let messageInput = document.querySelector('#message');
+    let messageArea = document.querySelector('#messageArea');
+    let connectingElement = document.querySelector('.connecting');
+
+    let stompClient = null;
+    let username = null;
+
+    let colors = [
+        '#2196F3', '#32c787', '#00BCD4', '#ff5652',
+        '#ffc107', '#ff85af', '#FF9800', '#39bbb0'
+    ];
+
+    function checkStoredUsername() {
+        let storedUsername = localStorage.getItem("chatUsername");
+        if (storedUsername) {
+            username = storedUsername;
+            usernamePage.classList.add('hidden');
+            chatPage.classList.remove('hidden');
+	    let socket = new SockJS('http://localhost:8080/ws');
+            stompClient = Stomp.over(socket);
+            stompClient.connect({}, onConnected, onError);
+        } else {
+            usernamePage.classList.remove('hidden');
+            chatPage.classList.add('hidden');
+        }
+    }
+
+    function connect(event) {
+        username = document.querySelector('#name').value.trim();
+        localStorage.setItem("chatUsername", username);
+        if(username) {
+            usernamePage.classList.add('hidden');
+            chatPage.classList.remove('hidden');
+            let socket = new SockJS('http://localhost:8080/ws');
+            stompClient = Stomp.over(socket);
+            stompClient.connect({}, onConnected, onError);
+        }
+        event.preventDefault();
+    }
+
+    function onConnected() {
+        stompClient.subscribe('/topic/public', onMessageReceived);
+        stompClient.subscribe('/topic/onlineCount', onOnlineCountReceived);
+        stompClient.subscribe('/topic/onlineUsers', onOnlineUserNameReceived);
+        stompClient.send("/app/chat.addUser", {}, JSON.stringify({sender: username, type: 'JOIN'}));
+        connectingElement.classList.add('hidden');
+    }
+
+    function onError(error) {
+        connectingElement.textContent = 'Could not connect to WebSocket server. Please refresh this page to try again!';
+        connectingElement.style.color = 'red';
+    }
+
+    function sendMessage(event) {
+        let messageContent = messageInput.value.trim();
+        if(messageContent && stompClient) {
+            let chatMessage = {sender: username, content: messageInput.value, type: 'CHAT'};
+            stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
+            messageInput.value = '';
+        }
+        event.preventDefault();
+    }
+
+    function onMessageReceived(payload) {
+        let message = JSON.parse(payload.body);
+        let messageElement = document.createElement('li');
+        if(message.type === 'JOIN') {
+            messageElement.classList.add('event-message');
+            message.content = message.sender + ' joined!';
+        } else if (message.type === 'LEAVE') {
+            messageElement.classList.add('event-message');
+            message.content = message.sender + ' left!';
+        } else {
+            messageElement.classList.add('chat-message');
+            let avatarElement = document.createElement('i');
+            let avatarText = document.createTextNode(message.sender[0]);
+            avatarElement.appendChild(avatarText);
+            avatarElement.style['background-color'] = getAvatarColor(message.sender);
+            messageElement.appendChild(avatarElement);
+            let usernameElement = document.createElement('span');
+            let usernameText = document.createTextNode(message.sender);
+            usernameElement.appendChild(usernameText);
+            messageElement.appendChild(usernameElement);
+        }
+        let textElement = document.createElement('p');
+        let messageText = document.createTextNode(message.content);
+        textElement.appendChild(messageText);
+        messageElement.appendChild(textElement);
+        messageArea.appendChild(messageElement);
+        messageArea.scrollTop = messageArea.scrollHeight;
+    }
+
+    function getAvatarColor(messageSender) {
+        let hash = 0;
+        for (let i = 0; i < messageSender.length; i++) {
+            hash = 31 * hash + messageSender.charCodeAt(i);
+        }
+        let index = Math.abs(hash % colors.length);
+        return colors[index];
+    }
+
+    function onOnlineCountReceived(payload) {
+        const onlineCount = payload.body;
+        document.querySelector("#onlineCount").textContent = "Online Users: " + onlineCount;
+    }
+
+    function onOnlineUserNameReceived(payload){
+        const users = JSON.parse(payload.body);
+        const container = document.querySelector("#onlineUsers");
+        container.innerHTML = "";
+        users.forEach(user => {
+            const li = document.createElement("li");
+            li.textContent = user;
+            container.appendChild(li);
+        });
+    }
+
+    async function loadChatHistory() {
+        try {
+            const response = await fetch('http://localhost:8080/chat/history');
+            const chats = await response.json();
+            displayChatHistory(chats);
+        } catch (error) {
+            console.error('Error fetching chat history:', error);
+        }
+    }
+    function displayChatHistory(chats) {
+        chats.slice().reverse().forEach(chat => {
+            onMessageReceived({ body: JSON.stringify(chat) });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadChatHistory();
+      checkStoredUsername();
+    });
+
+    messageInput.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        messageForm.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+        messageInput.value = '';
+      }
+    });
+
+    usernameForm.addEventListener('submit', connect, true)
+    messageForm.addEventListener('submit', sendMessage, true)
+</script>
+</body>
+</html>

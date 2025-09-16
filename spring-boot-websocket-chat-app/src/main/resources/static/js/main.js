@@ -15,14 +15,6 @@ let colors = [
     '#2196F3', '#32c787', '#00BCD4', '#ff5652',
     '#ffc107', '#ff85af', '#FF9800', '#39bbb0'
 ];
-
-//////////////////Username Store//////////////////////
-
-//window.addEventListener("load", checkStoredUsername);
-
-//document.addEventListener("DOMContentLoaded", () => checkStoredUsername());
-
-
 function checkStoredUsername() {
     let storedUsername = localStorage.getItem("chatUsername");
 
@@ -182,27 +174,6 @@ function displayChatHistory(chats) {
     });
 }
 
-//function displayChatHistory(chats) {
-//    const chatBox = document.getElementById('messageArea'); // your chat container
-//    if (!chatBox) return;
-//
-//    chats.forEach(chat => {
-//        const msg = document.createElement('div');
-//
-//        if (chat.type === 'CHAT') {
-//            msg.textContent = `${chat.sender}: ${chat.content}`;
-//        } else if (chat.type === 'JOIN') {
-//            msg.textContent = `${chat.sender} joined the chat`;
-//        }
-//
-//        chatBox.appendChild(msg);
-//    });
-//}
-
-// Load chat history when the page loads
-//window.addEventListener('DOMContentLoaded', loadChatHistory);
-
-
 document.addEventListener("DOMContentLoaded", () => {
   loadChatHistory();
   checkStoredUsername();
@@ -222,7 +193,6 @@ messageInput.addEventListener('keydown', function (event) {
     messageInput.value = '';
   }
 });
-
 
 //---------------------------------------------------------------------------
 
