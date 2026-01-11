@@ -63,6 +63,10 @@ function onConnected() {
             stompClient.subscribe('/topic/onlineCount', onOnlineCountReceived);
             stompClient.subscribe('/topic/onlineUsers', onOnlineUserNameReceived);
 
+    stompClient.subscribe('/topic/typing', function (msg) {
+        showTyping(JSON.parse(msg.body));
+    });
+
     // Tell your username to the server
     stompClient.send("/app/chat.addUser",
         {},
@@ -200,3 +204,67 @@ messageInput.addEventListener('keydown', function (event) {
 
 usernameForm.addEventListener('submit', connect, true)
 messageForm.addEventListener('submit', sendMessage, true)
+
+//----------------------------------------------Multilple User Typing-----------------------------------------------------
+let isTyping = false;
+
+function onTyping() {
+    if (!stompClient?.connected) return;
+
+    // send ONLY ONCE when typing starts
+    if (!isTyping) {
+        isTyping = true;
+        stompClient.send("/app/typing", {}, JSON.stringify({
+            sender: username,
+            typing: true
+        }));
+    }
+
+    clearTimeout(typingTimeout);
+    typingTimeout = setTimeout(stopTyping, 1500);
+}
+
+function stopTyping() {
+    if (!stompClient?.connected) return;
+    isTyping = false;
+    stompClient.send("/app/typing", {}, JSON.stringify({
+        sender: username,
+        typing: false
+    }));
+}
+
+
+// 🔹 Global (TOP of file)
+let typingTimeout = null;
+const typingUsers = new Set();
+
+function showTyping(data) {
+    if (data.sender == username) return ;
+        if (data.typing) {
+            typingUsers.add(data.sender);
+        } else {
+            typingUsers.delete(data.sender);
+        }
+        if (typingUsers.size === 0) {
+            typingEl.innerText = "";
+            return;
+        }
+
+        let text = "";
+        if (typingUsers.size === 1) {
+            text = [...typingUsers][0] + " is typing...";
+        } else if (typingUsers.size > 1) {
+            text = [...typingUsers].join(", ") + " are typing...";
+        }
+
+        const typingEl = document.getElementById('typingIndicator');
+        if (!typingEl) return;
+
+        typingEl.innerText = text;
+
+        clearTimeout(typingTimeout);
+        typingTimeout = setTimeout(() => {
+            typingEl.innerText = "";
+        }, 2000);
+    }
+

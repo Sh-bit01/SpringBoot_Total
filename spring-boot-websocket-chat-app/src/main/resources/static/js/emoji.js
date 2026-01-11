@@ -1,4 +1,4 @@
-'use strict';
+   'use strict';
 
 $(function () {
   // Initialize emoji picker for the input field
